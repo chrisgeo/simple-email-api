@@ -1,0 +1,31 @@
+{
+  "name": "brightwheel_api",
+  "version": "0.1.0",
+  "description": "Bright Wheel API Test",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "./node_modules/.bin/mocha tests/*.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "form-data": "^2.1.4",
+    "hapi": "^16.1.1",
+    "jsonschema": "^1.1.1",
+    "log4js": "^1.1.1",
+    "node-fetch": "^1.6.3",
+    "textversionjs": "^1.0.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-async-await": "0.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "expect": "^1.20.2",
+    "mocha": "^3.4.1",
+    "nodemon": "^1.11.0",
+    "sinon": "^2.2.0"
+  }
+}
