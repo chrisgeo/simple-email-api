@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "start": "node main.js",
-    "test": "./node_modules/.bin/mocha tests/*.js"
+    "test": "./node_modules/.bin/mocha tests/*.test.js",
+    "start-dev": "./node_modules/.bin/nodemon main.js"
   },
   "author": "",
   "license": "ISC",

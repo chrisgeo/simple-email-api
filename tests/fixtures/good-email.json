@@ -1,8 +1,8 @@
 {
-  "to": "chris@chris.com",
-  "to_name": "Chris George",
-  "from": "chris@yopmail.com",
-  "from_name": "CG",
-  "subject": "Testing - 123",
-  "body": "<h1>Testing</h1><p>Test me</p>"
+    "to": "chris@yopmail.com",
+    "to_name": "CG",
+    "from": "chris32@yopmail.com",
+    "from_name": "CG32",
+    "body": "<h1>Test me</h1><p>AWESOME!</p>",
+    "subject": "testing fetch"
 }
