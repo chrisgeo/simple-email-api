@@ -1,0 +1,8 @@
+[
+    {
+        "email": "recipient.email@example.com",
+        "status": "sent",
+        "reject_reason": "",
+        "_id": "abc123abc123abc123abc123abc123"
+    }
+]
