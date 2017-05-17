@@ -1,0 +1,14 @@
+{
+  "appenders": [
+    {
+      "type": "console",
+      "layout": {
+        "type": "basic"
+      }
+    }
+  ],
+  "levels": {
+    "console": "INFO"
+  },
+  "replaceConsole": false
+}

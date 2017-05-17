@@ -5,6 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    environment:
+      LOG4JS_CONFIG: ./conf/logging.default.json
     command: npm run start-dev
     volumes:
       - .:/app
