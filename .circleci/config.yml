@@ -2,31 +2,36 @@ version: 2
 
 jobs:
   build:
-    working_directory: ~/
+    working_directory: /app
     docker:
       - image: node:alpine
 
     steps:
-        - checkout
-        - setup_remote_docker
-        - run:
-            name: install docker
-            command: |
-              set -x
-              VER="17.03.1-ce"
-              apk add --no-cache ca-certificates wget
-              update-ca-certificates
-              wget -O /tmp/docker-$VER.tgz https://get.docker.com/builds/Linux/x86_64/docker-$VER.tgz
-              tar -xz -C /tmp -f /tmp/docker-$VER.tgz
-              mv /tmp/docker/* /usr/bin
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: install docker
+          command: |
+            set -x
+            VER="17.03.1-ce"
+            apk add --no-cache ca-certificates wget
+            update-ca-certificates
+            wget -O /tmp/docker-$VER.tgz https://get.docker.com/builds/Linux/x86_64/docker-$VER.tgz
+            tar -xz -C /tmp -f /tmp/docker-$VER.tgz
+            mv /tmp/docker/* /usr/bin
       - run: |
           TAG=0.1.$CIRCLE_BUILD_NUM
           if [ "${CIRCLE_BRANCH}" == "master" ]; then
             TAG=latest
           fi
           docker build --rm -t chrisgeorge/simple-email-api:$TAG .
+          docker run -e NODE_ENV=test -e LOG4JS_CONFIG=./conf/logging.test.json -it chrisgeorge/simple-email-api sh -c "npm i && npm test"
       - deploy:
           name: Deploy to Docker Hub
           command: |
-            docker login -u $DOCKER_USER -p $DOCKER_PASS
+            TAG=0.1.$CIRCLE_BUILD_NUM
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              TAG=latest
+            fi
+            docker login -u $DOCKER_USERNAME -p $DOCKER_PASS
             docker push chrisgeorge/simple-email-api:$TAG

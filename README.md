@@ -56,7 +56,7 @@ Download Docker for your platform from [https://www.docker.com/community-edition
 docker run --rm -p 3000:3000 -it chrisgeorge/simple-email-api
 
 # run tests and quiet logging
-docker run --rm -e LOG4JS_CONFIG=./conf/logging.test.json -it chrisgeorge/simple-email-api npm test
+docker run --rm -e NODE_ENV=test -e LOG4JS_CONFIG=./conf/logging.test.json -it chrisgeorge/simple-email-api sh -c "npm i && npm test"
 ```
 
 
