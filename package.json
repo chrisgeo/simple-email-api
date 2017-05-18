@@ -1,7 +1,7 @@
 {
-  "name": "brightwheel_api",
+  "name": "simple-email-api",
   "version": "0.1.0",
-  "description": "Bright Wheel API Test",
+  "description": "Simple Email API",
   "main": "main.js",
   "scripts": {
     "start": "node main.js",

@@ -54,13 +54,21 @@ Download Docker for your platform from [https://www.docker.com/community-edition
 #### TO PLAY
 ```bash
 docker run --rm -p 3000:3000 -it chrisgeorge/simple-email-api
+
+# run tests and quiet logging
+docker run --rm -e LOG4JS_CONFIG=./conf/logging.test.json -it chrisgeorge/simple-email-api npm test
 ```
 
 
 #### DEVELOPMENT
 
 ```bash
+# installs node_modules to mount from local dir
+docker-compose email npm i
 docker-compose up
+
+# run tests and quite logging
+docker-compuse run --rm -e LOG4JS_CONFIG=./conf/logging.test.json email npm test
 ```
 
 #### NODE
