@@ -46,7 +46,7 @@ LOG4JS_CONFIG: Path to config file for logging
 ```
 
 ### DOCKER
-`RECOMMEND WAY`
+> RECOMMEND WAY
 
 Download Docker for your platform from [https://www.docker.com/community-edition/](https://www.docker.com/community-edition/)
 
@@ -121,7 +121,7 @@ As far as feature and project management go, I probably should have tracked each
 - Email Client
   * Cons:
     * Static Class Based
-    * Design is scalable won't work if we want multiple providers at once with multiple api keys
+    * Design is not scalable, and won't work if we want multiple providers at once with multiple api keys (e.g. no real multi-tenant)
     * Error handling is lacking more specific messaging for some use-cases
 - Async/Await Model
   * Used sparingly and inconsistently
